@@ -1,0 +1,72 @@
+/* ProgressBar.css */
+:root {
+  --progress-bar-bg: #f0f0f0;
+  --progress-bar-red: #ff5252;
+  --progress-bar-green: #4caf50;
+  --progress-bar-yellow: #ffc107;
+  --text-color: #333;
+  --milestone-color: gold;
+  --reference-line-color: #666;
+}
+
+.customizable-progress-bar {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.progress-bar-rect {
+  transition: fill 0.3s ease;
+}
+
+.progress-bar-rect.below-target {
+  fill: var(--progress-bar-red);
+}
+
+.progress-bar-rect.above-target {
+  fill: var(--progress-bar-green);
+}
+
+.progress-bar-rect.at-target {
+  fill: var(--progress-bar-yellow);
+}
+
+.progress-label {
+  font-size: 12px;
+  fill: var(--text-color);
+  font-weight: bold;
+}
+
+.milestone-marker {
+  fill: var(--milestone-color);
+}
+
+.reference-line {
+  stroke: var(--reference-line-color);
+  stroke-dasharray: 3 3;
+}
+
+.target-label,
+.milestone-label {
+  font-size: 12px;
+  fill: var(--text-color);
+  font-weight: 600;
+}
+
+.axis-label {
+  font-size: 14px;
+  fill: var(--text-color);
+}
+
+@media (max-width: 600px) {
+  .progress-label,
+  .target-label,
+  .milestone-label {
+    font-size: 10px;
+  }
+
+  .axis-label {
+    font-size: 12px;
+  }
+}
